@@ -1,0 +1,46 @@
+.InterestsScreen {
+    background-image: url("../../img/bgInt.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+.text {
+  color: "white"
+}
+
+.customPrevArrow {
+  position: absolute; 
+  top: 50%;
+  left: 1.5vw;
+  transform: translateY(-50%);
+  z-index: 1; 
+  cursor: pointer;
+}
+
+.customNextArrow {
+  position: absolute; 
+  top: 50%;
+  right: 0.5vw;
+  transform: translateY(-50%);
+  z-index: 1; 
+  cursor: pointer;
+}
+
+.arrowCircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3vh;
+  height: 3vh;
+  background-color: transparent;
+  border: solid #4E5E7E;
+  border-radius: 50%;
+}
+
+.arrowIcon {
+  font-size: 3vh;
+  color: #4E5E7E;
+}

@@ -1,0 +1,26 @@
+@media only screen and (max-width: 768px) {
+  .mainPage-text {
+    width: 82% !important;
+  }
+
+  .map-container-div {
+    flex-direction: column !important;
+
+  }
+}
+
+.css-hyum1k-MuiToolbar-root {
+  min-height: 0 !important;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
