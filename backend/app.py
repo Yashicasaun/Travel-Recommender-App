@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request, Flask
+from flask import jsonify, request, Flask
 from flask_cors import CORS
 
 from backend.fetchers.fetch_categories import fetch_categories, fetch_subcategories

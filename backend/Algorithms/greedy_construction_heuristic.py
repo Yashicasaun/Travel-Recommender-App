@@ -2,12 +2,12 @@
 import copy
 import random
 
-from Algorithms.CostFunction import cost_function
+from backend.Algorithms.CostFunction import cost_function
 
 import pandas as pd
 import numpy as np
 
-from data.distance_matrix import get_distance,get_distance_from_hotel
+from backend.data.distance_matrix import get_distance,get_distance_from_hotel
 
 """
 Pseudocode for a Greedy Construction Heuristic

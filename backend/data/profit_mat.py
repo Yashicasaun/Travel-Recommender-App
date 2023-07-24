@@ -4,7 +4,7 @@ import os
 
 
 def read_data(city):
-    path = os.path.join(r"../data", city + ".csv")
+    path = os.path.join("data", city + ".csv")
     df = pd.read_csv(path)
     return df
 

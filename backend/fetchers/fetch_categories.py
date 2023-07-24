@@ -1,4 +1,4 @@
-from data.distance_matrix import get_data
+from backend.data.distance_matrix import get_data
 
 category_dict = {
   "Arts and Entertainment" : [10000, 12101, 17065],

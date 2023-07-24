@@ -1,5 +1,5 @@
 from backend.fetchers.fetch_fsq_data import fetch_data_from_fsq
-from data.distance_matrix import process_data
+from backend.data.distance_matrix import process_data
 
 
 

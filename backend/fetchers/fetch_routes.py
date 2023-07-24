@@ -1,10 +1,10 @@
-from Algorithms.ILS import ILS
-from Algorithms.SAILS import SAILS
-from Algorithms.ACO import AntColonyOptimization
-from Algorithms.GRASP import GRASP
+from backend.Algorithms.ILS import ILS
+from backend.Algorithms.SAILS import SAILS
+from backend.Algorithms.ACO import AntColonyOptimization
+from backend.Algorithms.GRASP import GRASP
 
-from data.distance_matrix import get_distance_matrix, process_data
-from data.profit_mat import get_profit_table
+from backend.data.distance_matrix import get_distance_matrix, process_data
+from backend.data.profit_mat import get_profit_table
 
 routes_Munich = {
     "Iterated Local Search": {

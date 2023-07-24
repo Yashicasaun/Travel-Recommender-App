@@ -6,11 +6,11 @@ Simulated Annealing Iterated Local Search
 import copy
 import time
 
-from Algorithms.CostFunction import cost_function_local_search
-from Algorithms.greedy_construction_heuristic import construct_initial_solution
-from data.distance_matrix import attach_long_lat, get_distance_from_hotel
-from data.distance_matrix import process_data, get_distance_matrix
-from data.profit_mat import get_profit_table
+from backend.Algorithms.CostFunction import cost_function_local_search
+from backend.Algorithms.greedy_construction_heuristic import construct_initial_solution
+from backend.data.distance_matrix import attach_long_lat, get_distance_from_hotel
+from backend.data.distance_matrix import process_data, get_distance_matrix
+from backend.data.profit_mat import get_profit_table
 
 """
 Pseudocode for Iterated Local Search
@@ -119,7 +119,7 @@ class ILS(object):
         return best_solution
 
     def local_search(self, solution):
-        # two opt swap
+
         solution = self.swap1(solution)
         solution = self.swap2(solution)
 

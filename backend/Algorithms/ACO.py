@@ -6,8 +6,8 @@ Ant Colony Optimization
 import copy
 #import time
 
-from Algorithms.CostFunction import cost_function, cost_function_local_search
-from data.distance_matrix import get_distance, attach_long_lat, get_distance_from_hotel
+from backend.Algorithms.CostFunction import cost_function, cost_function_local_search
+from backend.data.distance_matrix import get_distance, attach_long_lat, get_distance_from_hotel
 #from data.distance_matrix import get_distance_matrix, process_data
 #from data.profit_mat import get_profit_table
 import numpy as np
@@ -286,14 +286,13 @@ class AntColonyOptimization:
         """
         Performs local search on each day of the solution by swapping pairs of destinations to improve the cost.
         """
-        # two opt swap
-        tour = self.two_opt_swap(tour)
-        tour = self.multi_day_cross_exchange(tour)
+        tour = self.swap1(tour)
+        tour = self.swap2(tour)
 
         return tour
 
-    def two_opt_swap(self, tour):
-        # Two-Opt Swap heuristic
+    def swap2(self, tour):
+        # Swap two locations heuristic
         improved = False
         best_tour = copy.deepcopy(tour)
         _, best_costs, _ = self.calculate_cost(tour)
@@ -316,7 +315,7 @@ class AntColonyOptimization:
         else:
             return tour
 
-    def multi_day_cross_exchange(self, tour):
+    def swap2(self, tour):
         """
         Perturbs the solution by randomly swapping two destinations on different days.
         """

@@ -4,7 +4,7 @@ from math import radians, cos, sin, asin, sqrt
 import os
 from haversine import haversine
 
-from data.hotels_func import get_hotel_longlat
+from backend.data.hotels_func import get_hotel_longlat
 
 
 def get_distance(path, distance_matrix):
@@ -15,7 +15,6 @@ def get_distance(path, distance_matrix):
     return distance
 
 
-# define the Haversine formula for calculating distance between two points
 def haversine_distance(lon1, lat1, lon2, lat2):
     """
     Calculate the great circle distance between two points
@@ -59,7 +58,6 @@ def get_distance_matrix(df):
             dist_matrix.iloc[i, j] = dist
             dist_matrix.iloc[j, i] = dist
 
-    # print the distance matrix
     return dist_matrix  # distances in kilometers as the radius in km
 
 

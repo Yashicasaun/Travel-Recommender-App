@@ -1,7 +1,11 @@
+import os
+
 import pandas as pd
 import requests
+from dotenv import load_dotenv
 
 def get_data(categories, city):
+    load_dotenv()
     categories = ",".join(cat for cat in categories)
     params = {
         "sort": "rating",
@@ -12,10 +16,10 @@ def get_data(categories, city):
     }
 
     url = "https://api.foursquare.com/v3/places/search"
-
+    key = os.getenv('FSQ_ID')
     headers = {
         "Accept": "application/json",
-        "Authorization": ""
+        "Authorization": key
     }
 
     response = requests.request("GET", url, params=params, headers=headers)

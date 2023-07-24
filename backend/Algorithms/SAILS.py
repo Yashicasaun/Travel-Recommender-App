@@ -8,11 +8,11 @@ import time
 
 import numpy as np
 
-from Algorithms.CostFunction import cost_function_local_search
-from Algorithms.greedy_construction_heuristic import construct_initial_solution
-from data.distance_matrix import attach_long_lat, get_distance_from_hotel
-from data.distance_matrix import process_data, get_distance_matrix
-from data.profit_mat import get_profit_table
+from backend.Algorithms.CostFunction import cost_function_local_search
+from backend.Algorithms.greedy_construction_heuristic import construct_initial_solution
+from backend.data.distance_matrix import attach_long_lat, get_distance_from_hotel
+from backend.data.distance_matrix import process_data, get_distance_matrix
+from backend.data.profit_mat import get_profit_table
 
 """
 Pseudocode:
@@ -139,15 +139,14 @@ class SAILS(object):
 
     def local_search(self, solution):
         """
-        local search : performing 2-opt and multi0day heurisitics
+        local search : performing swap1 and swap2 heurisitics
         """
-        # two opt swap
-        solution = self.two_opt_swap(solution)
-        solution = self.multi_day_cross_exchange(solution)
+        solution = self.swap1(solution)
+        solution = self.swap2(solution)
 
         return solution
 
-    def two_opt_swap(self, solution):
+    def swap1(self, solution):
         current_cost, day_costs,_ = self.calculate_solution_cost(solution)
         new_solution = copy.deepcopy(solution)
         for day_idx, day in enumerate(new_solution):
@@ -167,7 +166,7 @@ class SAILS(object):
 
         return solution
 
-    def multi_day_cross_exchange(self, solution):
+    def swap2(self, solution):
         """
         Perturbs the solution by randomly swapping two destinations on different days.
         """

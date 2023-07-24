@@ -1,6 +1,6 @@
 import os
 
-from data.foursquare import get_data
+from backend.data.foursquare import get_data
 
 def fetch_data_from_fsq(categories, city):
     path = os.path.join("data", city + ".csv")

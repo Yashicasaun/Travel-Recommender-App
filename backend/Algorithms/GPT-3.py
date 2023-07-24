@@ -1,8 +1,11 @@
 import openai
 import requests
+import os
+from dotenv import load_dotenv
 
 # Set up OpenAI API credentials
-openai.api_key = "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"
+openai.api_key = os.getenv('OPEN_AI')
+load_dotenv()
 
 # Define user preferences
 user_budget = 1000
